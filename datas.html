@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <base target="_top">
+  </head>
+  <body>
+    <form id="myForm">
+<label> Search Keyword </label><input id="search" name="search" type="text" />
+<label> BlogID</label> <input id="blogId" name ="blogId" type="text" />
+
+<input type="button" value="Submit" 
+ onClick="google.script.run.withSuccessHandler(DataSaved,Success).processForm(this.form).google.script.run.main();"
+        />
+</form>
+<div id="Message"></div>
+ <script>
+    function DataSaved(){   
+        
+
+    document.getElementById('Message').innerHTML = "Data Saved";
+    };
+    </script>
+    
+  <div id ="Success"></div>
+  <script>
+    function Success(){
+    
+    google.script.run.searchByKeyword();
+    document.getElementById('Success').innerHTML = "Successfully Posted";
+    
+};
+
+
+ </script>
+    
+  </body>
+</html>
+
+
