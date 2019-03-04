@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <base target="_top">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  </head>
+  <body>    <form id="myForm">
+
+       
+  
+<label> Search Keyword </label><input id="search" name="search" type="text" />
+      
+
+<label> BlogID</label> <input id="blogId" name ="blogId" type="text" />
+  
+<input type="button" value="Submit" 
+ onClick="google.script.run.withSuccessHandler(DataSaved,Success).userActionRun(this.form).google.script.run.userActionRun();"
+        />
+   
+</form>
+<div id="Message"></div>
+
+ <script>
+    function DataSaved(){   
+        
+
+    document.getElementById('Message').innerHTML = "Data Saved";
+
+   
+   };
+    
+    </script>
+    
+  <div id ="Success"></div>
+  <script>
+    function Success(){
+    
+    google.script.run.userActionRun();
+    document.getElementById('Success').innerHTML = "Successfully Posted";
+    
+};
+
+
+ </script>
+
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+   
+  </body>
+</html>
+
+
